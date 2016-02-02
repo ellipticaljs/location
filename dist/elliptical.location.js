@@ -432,7 +432,7 @@
                     search=search.replace(key + '=' + val_, key + '=' + val);
                 }
             } else {
-                search += '?' + key + '=' + encodeURIComponent(val);
+                search = '?' + key + '=' + encodeURIComponent(val);
             }
             return search;
         },
