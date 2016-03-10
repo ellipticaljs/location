@@ -291,12 +291,6 @@
             if(virtualRoot !==DEFAULT_ROOT){
                 if(route.indexOf(virtualRoot)===0)route=route.replace(virtualRoot,'');
             }
-            if(this.hashTag){
-                var path=location.pathname;
-                route=route.replace(path,'');
-                if((route).charAt(1) === HASH_TAG)route=route.substring(2);
-                route=route.replace(HASH_TAG,'');
-            }
 
             return route;
         },
@@ -571,6 +565,8 @@
 
         pushHistory:false,
 
+        startDelay:1000,
+
         push:function(){
             if(this.pushHistory){
                 var stateObject=this.stateObject;
@@ -633,7 +629,7 @@
             route=route + params;
             setTimeout(function(){
                 Location.redirect(route);//fire the route of the current url
-            },300);
+            },self.startDelay);
 
             $(window).on('popstate', function (event) {
                 self.pop(event);
