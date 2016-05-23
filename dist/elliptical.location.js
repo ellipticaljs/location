@@ -436,6 +436,20 @@
             return search;
         },
 
+        getSearch:function(u){
+            var s='';
+            var index=0;
+            var query=this.getQuery(u);
+            for (var key in query) {
+                if (query.hasOwnProperty(key)) {
+                    if(index===0) s+='?';
+                    else s+='&';
+                    s+=key + '=' + encodeURIComponent(query[key]);
+                }
+            }
+            return s;
+        },
+
         /**
          *
          * @param {string} route
