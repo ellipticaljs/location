@@ -1,7 +1,7 @@
 {
   "name": "elliptical-location",
   "description": "Express style, history-enabled routing for the browser",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "dist/elliptical.location.js",
   "authors": [
     "S. Francis"
@@ -22,7 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "elliptical-utils": "~2.0.0",
+    "elliptical-utils": "~2.1.0",
     "elliptical-class": "~1.0.2",
     "elliptical-event": "~1.0.1"
   }
