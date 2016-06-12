@@ -482,6 +482,11 @@
             location.href=route;
         },
 
+        previous:function(){
+            var referrer=this.referrer;
+            this.redirect(referrer);
+        },
+
         /**
          * reloads the current route
          * @public
