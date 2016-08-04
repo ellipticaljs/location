@@ -591,6 +591,8 @@
 
         startDelay:1000,
 
+        redirectOnStart:true,
+
         push:function(){
             if(this.pushHistory){
                 var stateObject=this.stateObject;
@@ -652,7 +654,7 @@
             this.pushHistory = true;
             route=route + params;
             setTimeout(function(){
-                Location.redirect(route);//fire the route of the current url
+                if(self.redirectOnStart) Location.redirect(route);//fire the route of the current url
             },self.startDelay);
 
             $(window).on('popstate', function (event) {
