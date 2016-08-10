@@ -1,7 +1,7 @@
 {
   "name": "elliptical-location",
   "description": "Express style, history-enabled routing for the browser",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "main": "dist/elliptical.location.js",
   "authors": [
     "S. Francis"
