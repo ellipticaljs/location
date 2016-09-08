@@ -492,8 +492,8 @@
          * @public
          */
         reload:function(){
-            //default implementation using window.location
-            location.reload();
+            var href=this.href;
+            this.href=href;
         },
 
       /**
