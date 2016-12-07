@@ -54,7 +54,7 @@
                     names.push(name);
                     return mode === ":" ? "([^/]*)" : "(.*)";
                 });
-                re = new RegExp("^" + re + "$");
+                re = new RegExp("^" + re + "$","i");
                 self.parse = function (url) {
                     var i = 0;
                     var param, value;
@@ -773,14 +773,10 @@
             var routes=Router.routes;
             //retain original route for case sensitivity of querystrings
             var origRoute=route;
-            /* routes should be case insensitive */
-            route=route.toLowerCase();
             routes.forEach(function(obj,index){
                 var body={};
                 var query={};
                 var route_ = obj.route;
-                /* routes should be case insensitive */
-                route_=route_.toLowerCase();
                 var routePath=Location.toPath(route);
                 var rule = url.match(route_);
                 var data = rule.parse(routePath);
