@@ -699,6 +699,11 @@
                     var msg='route: ' + route + ' has been added. Method: ' + method;
                     (Router.enabled) ? console.log(msg) : Router.messageQueue.push(msg);
                 }
+                if(route.indexOf('/Index') > -1){
+                  route=route.replace('/Index','');
+                  var rte2 = { route: route, method: method, handle: callbacks };
+                  Router.routes.push(rte2);
+                }
             }
         },
 
